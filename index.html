@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>imtihon-1</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="card">
+      <form action="">
+        <div class="box" id="box">
+          <h5>DAY</h5>
+          <input  id="day" type="text" placeholder="DD" />
+          <p id="valid_day"></p>
+        </div>
+        <div class="box" id="box">
+          <h5>MONTH</h5>
+          <input id="month" type="text" placeholder="MM" />
+          <p id="valid_month"></p>
+        </div>
+        <div class="box" id="box">
+          <h5>YEAR</h5>
+          <input id="year" type="text" placeholder="YYYY" />
+          <p id="valid_year"></p>
+        </div>
+      </form>
+
+      <div class="section">
+        <hr class="line" />
+        <button id="button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="44"
+            height="44"
+            viewBox="0 0 46 44"
+          >
+            <g fill="none" stroke="#FFF" stroke-width="2">
+              <path
+                d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"
+              />
+            </g>
+          </svg>
+        </button>
+      </div>
+      
+      <ul>
+        <li><span id="years">--</span> years</li>
+        <li><span id="months">--</span> months</li>
+        <li><span id="days">--</span> days</li>
+      </ul>
+    </div>
+
+    <script src="./js/app.js"></script>
+  </body>
+</html>
