@@ -5,7 +5,7 @@ const boxs = document.querySelectorAll(".box");
 const validDay = document.getElementById("valid_day");
 const validMonth = document.getElementById("valid_month");
 const validYear = document.getElementById("valid_year");
-
+const inputs = document.querySelectorAll("input");
 const years = document.getElementById("years");
 const months = document.getElementById("months");
 const days = document.getElementById("days");
@@ -15,8 +15,16 @@ const dayy = now.getDate();
 const yearr = now.getFullYear();
 const monthh = now.getMonth() + 1;
 // console.log(dayy);
+inputs.forEach((input) => {
+  input.addEventListener("input", () => {
+    const key = new Audio("../music/keyboard.mp3");
+    key.play();
+  });
+});
+
 button.addEventListener("click", (e) => {
   e.preventDefault();
+
   let yill = yearr - year.value;
   let oyy = monthh - month.value;
   let kunn = dayy - day.value;
@@ -26,10 +34,14 @@ button.addEventListener("click", (e) => {
         if (oyy >= 0) {
           if (oyy == 0) {
             if (kunn > 0) {
+              const done = new Audio("../music/done.mp3");
+              done.play();
               years.textContent = yill;
               months.textContent = oyy;
               days.textContent = kunn;
             } else {
+              const music = new Audio("../music/error-Btn.mp3");
+              music.play();
               validDay.textContent = "Must be a valid day";
               validMonth.textContent = "Must be a valid month";
               validYear.textContent = "Must be in the past";
@@ -39,16 +51,22 @@ button.addEventListener("click", (e) => {
             }
           } else {
             if (kunn >= 0) {
+              const done = new Audio("../music/done.mp3");
+              done.play();
               years.textContent = yill;
               months.textContent = oyy;
               days.textContent = kunn;
             } else {
+              const done = new Audio("../music/done.mp3");
+              done.play();
               years.textContent = yill;
               months.textContent = oyy - 1;
               days.textContent = kunn + k;
             }
           }
         } else {
+          const music = new Audio("../music/error-btn.mp3");
+          music.play();
           validDay.textContent = "Must be a valid day";
           validMonth.textContent = "Must be a valid month";
           validYear.textContent = "Must be in the past";
@@ -59,20 +77,28 @@ button.addEventListener("click", (e) => {
       } else {
         if (oyy >= 0) {
           if (kunn >= 0) {
+            const done = new Audio("../music/done.mp3");
+            done.play();
             years.textContent = yill;
             months.textContent = oyy;
             days.textContent = kunn;
           } else {
+            const done = new Audio("../music/done.mp3");
+            done.play();
             years.textContent = yill;
             months.textContent = oyy - 1;
             days.textContent = kunn + k;
           }
         } else {
           if (kunn >= 0) {
+            const done = new Audio("../music/done.mp3");
+            done.play();
             years.textContent = yill - 1;
             months.textContent = oyy + 12;
             days.textContent = kunn;
           } else {
+            const done = new Audio("../music/done.mp3");
+            done.play();
             years.textContent = yill - 1;
             months.textContent = oyy + 11;
             days.textContent = kunn + k;
@@ -80,6 +106,8 @@ button.addEventListener("click", (e) => {
         }
       }
     } else {
+      const music = new Audio("../music/error-btn.mp3");
+      music.play();
       validDay.textContent = "Must be a valid day";
       validMonth.textContent = "Must be a valid month";
       validYear.textContent = "Must be in the past";
@@ -91,6 +119,8 @@ button.addEventListener("click", (e) => {
   /**function end */
 
   if (day.value == "" || month.value == "" || year.value == "") {
+    const music = new Audio("../music/error-btn.mp3");
+    music.play();
     validDay.textContent = "This field is required";
     validMonth.textContent = "This field is required";
     validYear.textContent = "This field is required";
@@ -99,6 +129,8 @@ button.addEventListener("click", (e) => {
     });
   } else {
     if (month.value > 12) {
+      const music = new Audio("../music/error-btn.mp3");
+      music.play();
       validDay.textContent = "Must be a valid day";
       validMonth.textContent = "Must be a valid month";
       validYear.textContent = "Must be in the past";
@@ -114,6 +146,8 @@ button.addEventListener("click", (e) => {
           if (day.value <= 29) {
             result(31);
           } else {
+            const music = new Audio("../music/error-btn.mp3");
+            music.play();
             validDay.textContent = "Must be a valid date";
             boxs.forEach((box) => {
               box.classList.add("red");
@@ -131,6 +165,8 @@ button.addEventListener("click", (e) => {
           if (day.value <= 31) {
             result(31);
           } else {
+            const music = new Audio("../music/error-btn.mp3");
+            music.play();
             validDay.textContent = "Must be a valid date";
             boxs.forEach((box) => {
               box.classList.add("red");
@@ -140,6 +176,8 @@ button.addEventListener("click", (e) => {
           if (day.value <= 30) {
             result(31);
           } else {
+            const music = new Audio("../music/error-btn.mp3");
+            music.play();
             validDay.textContent = "Must be a valid date";
             boxs.forEach((box) => {
               box.classList.add("red");
@@ -151,6 +189,8 @@ button.addEventListener("click", (e) => {
           if (day.value <= 28) {
             result(31);
           } else {
+            const music = new Audio("../music/error-btn.mp3");
+            music.play();
             validDay.textContent = "Must be a valid date";
             boxs.forEach((box) => {
               box.classList.add("red");
@@ -168,6 +208,8 @@ button.addEventListener("click", (e) => {
           if (day.value <= 31) {
             result(31);
           } else {
+            const music = new Audio("../music/error-btn.mp3");
+            music.play();
             validDay.textContent = "Must be a valid date";
             boxs.forEach((box) => {
               box.classList.add("red");
@@ -177,6 +219,8 @@ button.addEventListener("click", (e) => {
           if (day.value <= 30) {
             result(31);
           } else {
+            const music = new Audio("../music/error-btn.mp3");
+            music.play();
             validDay.textContent = "Must be a valid date";
             boxs.forEach((box) => {
               box.classList.add("red");
